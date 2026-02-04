@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>For My Favorite Pharmacist 💖</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+        body {
+            margin: 0;
+            height: 100vh;
+            background: linear-gradient(135deg, #ffd6e8, #fff);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: 'Segoe UI', sans-serif;
+        }
+
+        .card {
+            background: white;
+            padding: 30px 20px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(255, 105, 180, 0.3);
+            text-align: center;
+            width: 90%;
+            max-width: 400px;
+        }
+
+        h1 {
+            color: #ff4d88;
+            font-size: 22px;
+            margin-bottom: 25px;
+        }
+
+        .buttons {
+            position: relative;
+            height: 120px;
+        }
+
+        button {
+            padding: 12px 25px;
+            font-size: 16px;
+            border-radius: 30px;
+            border: none;
+            cursor: pointer;
+            transition: 0.3s ease;
+        }
+
+        #yesBtn {
+            background: #ff4d88;
+            color: white;
+        }
+
+        #yesBtn:hover {
+            background: #ff1a66;
+        }
+
+        #noBtn {
+            background: #f2f2f2;
+            color: #555;
+            position: absolute;
+            left: 50%;
+            top: 60px;
+            transform: translateX(-50%);
+        }
+
+        .meme {
+            display: none;
+            margin-top: 20px;
+        }
+
+        .meme img {
+            width: 100%;
+            border-radius: 15px;
+        }
+
+        .caption {
+            margin-top: 10px;
+            font-size: 18px;
+            color: #ff4d88;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="card">
+    <h1>💊 Do you use antibiotics for fever? 💖</h1>
+
+    <div class="buttons">
+        <button id="yesBtn">Yes</button>
+        <button id="noBtn">No</button>
+    </div>
+
+    <div class="meme" id="memeBox">
+        <img src="meme.png" alt="Wrong Answer Meme">
+        <div class="caption">😌 Maaf kijiyega, yeh galat jawab hai</div>
+    </div>
+</div>
+
+<script>
+    const noBtn = document.getElementById("noBtn");
+    const yesBtn = document.getElementById("yesBtn");
+    const memeBox = document.getElementById("memeBox");
+
+    // Move NO button on hover or touch
+    function moveButton() {
+        const x = Math.random() * 250 - 125;
+        const y = Math.random() * 80 - 40;
+        noBtn.style.transform = `translate(${x}px, ${y}px)`;
+    }
+
+    noBtn.addEventListener("mouseenter", moveButton);
+    noBtn.addEventListener("touchstart", moveButton);
+
+    yesBtn.addEventListener("click", () => {
+        memeBox.style.display = "block";
+    });
+</script>
+
+</body>
+</html>
